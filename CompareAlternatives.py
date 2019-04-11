@@ -3,7 +3,7 @@ import ProbilisticParamClasses as P
 import InputData as D
 import MultiCohortSupport as Support
 
-N_COHORTS = 100              # number of cohorts
+N_COHORTS = 200              # number of cohorts
 
 if __name__ == '__main__':  # this line is needed to avoid errors that occur on Windows computers
 
