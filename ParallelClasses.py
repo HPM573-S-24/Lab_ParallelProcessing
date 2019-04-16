@@ -33,7 +33,7 @@ class ParallelMultiCohort(MultiCohort):
         for i in range(len(self.ids)):
             self.cohorts.append(Cohort(id=self.ids[i],
                                        pop_size=self.popSize,
-                                       parameters=self.list_params[i])
+                                       parameters=self.param_sets[i])
                                 )
 
     def simulate(self, sim_length, n_processes=MAX_PROCESSES):
