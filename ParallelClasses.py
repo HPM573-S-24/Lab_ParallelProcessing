@@ -1,5 +1,5 @@
 import multiprocessing as mp
-from MarkovModelClasses import Cohort
+
 from MultiCohortClasses import MultiCohort
 
 MAX_PROCESSES = mp.cpu_count()  # maximum number of processors
@@ -27,14 +27,6 @@ class ParallelMultiCohort(MultiCohort):
         """
 
         MultiCohort.__init__(self, ids, pop_size, therapy)
-        self.cohorts = []
-
-        # create cohorts
-        for i in range(len(self.ids)):
-            self.cohorts.append(Cohort(id=self.ids[i],
-                                       pop_size=self.popSize,
-                                       parameters=self.param_sets[i])
-                                )
 
     def simulate(self, sim_length, n_processes=MAX_PROCESSES):
 

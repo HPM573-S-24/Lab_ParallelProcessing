@@ -1,7 +1,7 @@
-from ParallelClasses import ParallelMultiCohort
-import ProbilisticParamClasses as P
 import InputData as D
 import MultiCohortSupport as Support
+import ProbilisticParamClasses as P
+from ParallelClasses import ParallelMultiCohort
 
 N_COHORTS = 200              # number of cohorts
 

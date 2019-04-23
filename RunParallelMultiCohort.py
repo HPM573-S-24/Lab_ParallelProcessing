@@ -1,9 +1,9 @@
-from ParallelClasses import ParallelMultiCohort
-import ProbilisticParamClasses as P
 import InputData as D
 import MultiCohortSupport as Support
-import SimPy.SamplePathClasses as Path
+import ProbilisticParamClasses as P
 import SimPy.FigureSupport as Fig
+import SimPy.SamplePathClasses as Path
+from ParallelClasses import ParallelMultiCohort
 
 N_COHORTS = 100              # number of cohorts
 therapy = P.Therapies.MONO  # selected therapy
