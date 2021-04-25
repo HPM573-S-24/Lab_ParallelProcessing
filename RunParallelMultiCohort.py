@@ -1,8 +1,8 @@
 import InputData as D
 import MultiCohortSupport as Support
 import ProbilisticParamClasses as P
-import SimPy.FigureSupport as Fig
-import SimPy.SamplePathClasses as Path
+import SimPy.Plots.Histogram as Hist
+import SimPy.Plots.SamplePaths as Path
 from ParallelClasses import ParallelMultiCohort
 
 N_COHORTS = 100              # number of cohorts
@@ -20,7 +20,7 @@ if __name__ == '__main__':  # this line is needed to avoid errors that occur on 
     multiCohort.simulate(sim_length=D.SIM_LENGTH)
 
     # plot the sample paths
-    Path.graph_sample_paths(
+    Path.plot_sample_paths(
         sample_paths=multiCohort.multiCohortOutcomes.survivalCurves,
         title='Survival Curves',
         x_label='Time-Step (Year)',
@@ -28,7 +28,7 @@ if __name__ == '__main__':  # this line is needed to avoid errors that occur on 
         transparency=0.5)
 
     # plot the histogram of average survival time
-    Fig.graph_histogram(
+    Hist.plot_histogram(
         data=multiCohort.multiCohortOutcomes.meanSurvivalTimes,
         title='Histogram of Mean Survival Time',
         x_label='Mean Survival Time (Year)',
