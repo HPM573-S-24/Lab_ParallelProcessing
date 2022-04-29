@@ -29,6 +29,9 @@ class ParallelMultiCohort(MultiCohort):
 
         MultiCohort.__init__(self, ids, pop_size, therapy)
 
+        # populate parameter sets
+        self._populate_parameter_sets()
+
         # make cohorts
         self.cohorts = []
         for i in range(len(self.ids)):
