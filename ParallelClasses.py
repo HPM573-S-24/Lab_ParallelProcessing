@@ -1,7 +1,7 @@
 import multiprocessing as mp
 
-from MarkovModelClasses import Cohort
-from MultiCohortClasses import MultiCohort
+from EconEvalMarkovModelClasses import Cohort
+from ProbabilisticClasses import MultiCohort
 
 MAX_PROCESSES = mp.cpu_count()  # maximum number of processors
 
@@ -29,16 +29,17 @@ class ParallelMultiCohort(MultiCohort):
 
         MultiCohort.__init__(self, ids, pop_size, therapy)
 
-        # populate parameter sets
-        self._populate_parameter_sets()
-
         # make cohorts
         self.cohorts = []
         for i in range(len(self.ids)):
+
+            # get a new set of parameter values
+            param_set = self.paramGenerator.get_new_parameters(seed=self.ids[i])
+
             # create a cohort
             cohort = Cohort(id=self.ids[i],
                             pop_size=self.popSize,
-                            parameters=self.paramSets[i])
+                            parameters=param_set)
             # append the cohort
             self.cohorts.append(cohort)
 

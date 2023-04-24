@@ -1,5 +1,5 @@
-import InputData as D
-import MultiCohortSupport as Support
+import EconEvalInputData as D
+import ProbabilisticSupport as Support
 import ProbilisticParamClasses as P
 from ParallelClasses import ParallelMultiCohort
 
