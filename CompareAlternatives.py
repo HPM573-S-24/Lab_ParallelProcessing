@@ -18,7 +18,7 @@ if __name__ == '__main__':  # this line is needed to avoid errors that occur on 
 
     # create a multi-cohort to simulate under combi therapy
     multiCohortCombo = ParallelMultiCohort(
-        ids=range(N_COHORTS, 2*N_COHORTS),
+        ids=range(N_COHORTS),
         pop_size=D.POP_SIZE,
         therapy=P.Therapies.COMBO
     )
